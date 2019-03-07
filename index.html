@@ -5,24 +5,66 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Draw | Adgitm</title>
-    
-    <script></script>
-    <script></script>
-    <script></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-core.js"></script>
+
 
         <style>
+            html, body {
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+            }
             #draw {
                 background-color: black;
-                height: auto;
+                height: 100%;
                 width: 100%;
                 margin: 0px;
             }
         </style>
 
+        <script>
+            console.log($);
+
+            $(document).ready(function () {
+                console.log("hello");
+
+                const mycanvas = document.querySelector("#draw") ;
+                const mc = new Hammer(mycanvas) ;
+                mc.on('pan' ,function (ev) {
+
+                    console.log(ev) ;
+                    console.log("subhahu");
+
+
+                    if(ev.isFirst) {
+                        console.log("First");
+                    }
+
+                    if(ev.isFinal) {
+                        console.log("Final");
+                    }
+
+                    else {
+                        console.log("Between");
+                    }
+
+
+                });
+            });
+        
+        </script>
+
+
+
+
 </head>
 <body>
     
-    <canvas id="draw">
+    <canvas id="draw" resize>
 
     </canvas>
 
