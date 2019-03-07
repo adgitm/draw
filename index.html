@@ -41,19 +41,29 @@
 
 
                     if(ev.isFirst) {
-                        console.log("First");
+                        startDraw(ev) ;
                     }
 
-                    if(ev.isFinal) {
-                        console.log("Final");
+                    else if(ev.isFinal) {
+                        endDraw(ev) ;
                     }
 
                     else {
-                        console.log("Between");
+                        betweenDraw(ev) ;
                     }
 
 
                 });
+
+                const startDraw = (ev) => {
+                    console.log("startDraw", ev.center.x, ev.center.y) ;
+                }
+                const endDraw = (ev) => {
+                    console.log("endDraw", ev.center.x, ev.center.y) ;
+                }
+                const betweenDraw = (ev) => {
+                    console.log("betweenDraw", ev.center.x, ev.center.y) ;
+                }
             });
         
         </script>
